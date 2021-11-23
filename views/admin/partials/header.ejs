@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<title>Weather App Dashboard</title>
+
+	<!-- Required meta tags always come first -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+	<!-- Theme Font -->
+	<link rel="preload" type="text/css" href="css/theme-font.min.css" as="style">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" type="text/css" href="Bootstrap/dist/css/bootstrap.css">
+
+	<!-- Main Styles CSS -->
+	<link rel="stylesheet" type="text/css" href="css/main.min.css">
+
+	<!-- Main RTL CSS -->
+	<!--<link rel="stylesheet" type="text/css" href="css/rtl.min.css">-->
+
+
+
+</head>
+
+<body class="page-has-left-panels page-has-right-panels">
+
+<!-- Header-BP -->
+
+	<header class="header" id="site-header">
+
+		<div class="page-title">
+			<h6>weather App</h6>
+		</div>
+
+		<div class="header-content-wrapper">
+			
+			<div class="control-block">
+
+				<div class="author-page author vcard inline-items more">
+					<div class="author-thumb">
+						<img alt="author" src="img/author-page.webp" width="36" height="36" class="avatar">
+						<span class="icon-status online"></span>
+						<div class="more-dropdown more-with-triangle">
+							<div class="mCustomScrollbar" data-mcs-theme="dark">
+								<div class="ui-block-title ui-block-title-small">
+									<h6 class="title">Your Account</h6>
+								</div>
+
+								<ul class="account-settings">
+									<li>
+										<a href="/logout-admin">
+											<svg class="olymp-logout-icon"><use xlink:href="#olymp-logout-icon"></use></svg>
+
+											<span>Log Out</span>
+										</a>
+									</li>
+								</ul>
+
+
+							</div>
+
+						</div>
+					</div>
+					<a href="/admin-dashboard" class="author-name fn">
+						<div class="author-title">
+							<%=user.username%> <svg class="olymp-dropdown-arrow-icon"><use xlink:href="#olymp-dropdown-arrow-icon"></use></svg>
+						</div>
+						<span class="author-subtitle">Hi, Admin</span>
+					</a>
+				</div>
+
+			</div>
+		</div>
+
+	</header>
+
+
+	<div class="header-spacer header-spacer-small"></div>
+

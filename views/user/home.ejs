@@ -1,0 +1,126 @@
+<%- include ('partials/header') %>
+<style>
+	.day-wethear-item {
+    cursor: pointer;
+}
+#flash-container{
+	position: relative;
+}
+p#flash {
+    z-index: 100;
+    position: relative;
+}
+</style>
+<!-- Main Header Weather -->
+<span id="flash-container">
+	<% if (messages.error != '' && messages.error != undefined && messages.error != null){ %>
+		<p style="background: white; padding: 10px; border-left: 2px solid #a00202;"
+		class="alert-text text-prompt-pop text-error text-bg animate__animated animate__bounceInLeft" id="flash"><%= messages.error %></p>
+					 
+	<% } else if (messages.success != '' && messages.success != undefined && messages.success != null) {%>
+		<p style="background: white; padding: 10px; border-left: 2px solid #66affa;"
+		class="alert-text text-prompt-pop text-success text-bg animate__animated animate__bounceInLeft" id="flash"><%= messages.success %></p>
+	<%}%>
+ </span>
+	<div class="main-header main-header-weather" id="inview">
+		<div class="content-bg-wrap bg-weather"></div>
+
+		<div class="date-and-place" id="hold-date">
+			
+		</div>
+
+		<div class="container" >
+			<div class="row">
+				<div class="m-auto col-lg-4 col-md-8 col-sm-12 col-12">
+					<div class="wethear-content">
+						<div id="hold">
+							<div class="d-flex justify-content-center">
+								<div class="spinner-grow" role="status" style="width: 15rem; height: 15rem;">
+								  <span class="sr-only"></span>
+								</div>
+							 </div>
+						</div>
+						
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<img class="img-bottom" src="img/weather-bottom.webp" alt="friends" width="1124" height="310">
+	</div>
+	
+<!-- ... end Main Header Weather -->
+
+
+
+<!-- Widget Weather -->
+
+<div class="container">
+	<div class="row">
+		<div class="col col-xl-12 order-xl-2 col-lg-12 order-lg-1 col-md-12 col-sm-12 col-12">
+			<div class="ui-block">
+				<div class="ui-block-title">
+					<h6 class="title">Change Default Location</h6>
+				</div>
+				<div class="ui-block-content">
+
+					<!-- Form Weather -->
+					<form action="/changelocation" method="post">
+						<div class="row">
+							<input type="text" id="city" value="<%=user.location %>" hidden>
+							<div class="col col-lg-12 col-md-12 col-sm-12 col-12">
+								<fieldset class="form-group label-floating">
+									<label class="control-label">Enter City Name</label>
+									<input type="text" class="" name="city">
+								</fieldset>
+								<button class="btn btn-blue btn-md full-width" type="submit">Save new location</button>
+							</div>
+						</div>
+					</form>
+					
+					<!-- ... end Form Weather -->
+				</div>
+			</div>
+
+			<div class="ui-block">
+				<div class="ui-block-title">
+					<h6 class="title">Weekly Forecast</h6>
+				</div>
+
+				<!-- Slider Weather -->
+				<div class="swiper-container pagination-bottom" data-slide="fade">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide swiper-slide-weather" data-swiper-parallax="-500" id="forecast-holder">
+							<div class="d-flex justify-content-center">
+								<div class="spinner-grow" role="status" style="width: 15rem; height: 15rem;">
+								  <span class="sr-only"></span>
+								</div>
+							 </div>
+						</div>
+						
+					</div>
+				
+					<!-- If we need pagination -->
+					<div class="swiper-pagination pagination-blue"></div>
+				</div>
+				
+				<!-- ... end Slider Weather -->
+
+			</div>
+
+		</div>
+
+	
+	</div>
+</div>
+
+
+<!-- ... end Widget Weather -->
+
+<script src="/js/engine.js">
+
+</script>
+
+
+<%- include('partials/footer') %>
